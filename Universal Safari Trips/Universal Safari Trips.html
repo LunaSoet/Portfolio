@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Safari Trip</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #6fd2be, #4db8a1);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .logo img {
+            width: 80px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center the navigation */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-image: url('philliphines2.jpg'); /* Ensure this path is correct */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 150px 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .cta-buttons .btn {
+            background-color: #4db8a1;
+            color: #fff;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .cta-buttons .btn:hover {
+            background-color: #3a9f8c;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #6fd2be;
+        }
+        .destination-grid {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
+            justify-content: center; /* Center items */
+            gap: 20px; /* Space between items */
+        }
+        .destination {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            width: calc(300px - 20px); /* Set a fixed width with gap consideration */
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit the text color from the parent */
+        }
+        .destination img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination h3 {
+            font-size: 1.5rem;
+            margin: 10px;
+            color: #007b71; /* Set color for Uganda and Philippines */
+        }
+        .destination p {
+            font-size: 0.9rem;
+            margin: 0 10px 10px;
+            color: #000; /* Set text color to black for description */
+        }
+        .newsletter form, .booking-form form {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .newsletter input[type="email"],
+        .booking-form input[type="text"],
+        .booking-form input[type="email"],
+        .booking-form input[type="date"],
+        .booking-form select,
+        .booking-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            max-width: 100%; /* Make input fields responsive */
+        }
+        .newsletter button,
+        .booking-form button {
+            padding: 15px 30px;
+            background-color: #4db8a1; /* Corrected property */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .newsletter button:hover,
+        .booking-form button:hover {
+            background-color: #3a9f8c;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #6fd2be;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        .about-us, .booking-form {
+            max-width: 800px; /* Set a maximum width for the sections */
+            margin: 0 auto; /* Center the section */
+            text-align: left; /* Align text to the left */
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
+            justify-content: space-between; /* Space out items */
+        }
+        .item {
+            flex: 1 1 300px; /* Base size of 300px */
+            margin: 10px; /* Space between items */
+        }
+        @media (max-width: 600px) {
+            .flex-item {
+                flex: 1 1 100%; /* Full width on small screens */
+            }
+        }
+        .flex-item {
+            flex: 1 1 200px; /* Grow and shrink with a base size of 200px */
+            margin: 10px; /* Space between items */
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logoe.png" alt="Universal Safari Trip Logo">
+            <h1>Universal Safari Trips</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#tips">Book Now</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Discover Your Next Adventure</h1>
+        <div class="cta-buttons">
+            <a href="#destinations" class="btn">Explore Destinations</a>
+            <a href="#tips" class="btn">Book Now!</a>
+        </div>
+    </section>
+
+    <!-- Featured Destinations Section -->
+    <section id="destinations" class="featured-destinations">
+        <h2>Featured Destinations</h2>
+        <div class="destination-grid">
+            <div class="destination">
+                <a href="uganda.html">
+                    <img src="uganda2.jpg" alt="Uganda"> <!-- Ensure this path is correct -->
+                    <h3>Uganda</h3>
+                    <p>Experience breathtaking wildlife and vibrant culture in the Pearl of Africa.</p>
+                </a>
+            </div>
+            <div class="destination">
+                <a href="philippines.html">
+                    <img src="filliphines1.jpg" alt="Philippines"> <!-- Ensure this path is correct -->
+                    <h3>Philippines</h3>
+                    <p>Discover stunning islands, crystal-clear waters, and a rich cultural heritage.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section id="tips" class="travel-tips">
+        <h2>Book Now!</h2>
+        <div class="booking-form">
+            <p>Please fill out the form below if you would like to enquire regarding the availability of a room in the Philippines:</p>
+            <form action="book.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="contact_number" placeholder="Contact Number" required>
+                <input type="text" name="preferred_room" placeholder="Preferred Room" required>
+                <input type="number" name="number_of_guests" placeholder="Number of Guests" required>
+                <input type="number" name="number_of_nights" placeholder="Number of Nights" required>
+                <input type="date" name="arrival_date" required>
+                <textarea name="message" placeholder="Any special requests or messages" rows="4"></textarea>
+                <button type="submit">Submit Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-us">
+        <h2>About Us</h2>
+        <p>The Universal Safari Trip, together with RL Travel and Tours, is a travel company duly registered in Uganda, Kenya, Tanzania, South Africa, Congo, and the Philippines. We provide and promote travel as well as tourism-related services to the general public and work with our customer suppliers and partners to offer different traveling packages for each destination for both local and international tourists.</p>
+        
+        <h3>Mission</h3>
+        <p>To help promote tourism locally and internationally, providing a competitive and reliable source of tourism that our guests, both local and international, will enjoy during their travel experiences. We aim to give a total experience to our beloved guests as a travel and tours company.</p>
+        
+        <h3>Vision</h3>
+        <p>As a travel agency, we provide sustainable and attainable tour packages to our guests, both local and international. We ensure their security and strive to give our guests a great and memorable experience during their tours.</p>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with travel tips, destination highlights, and exclusive deals.</p>
+        <form action="subscribe.php" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Follow us on:</p>
+        <a href="#facebook">Facebook</a>
+        <a href="#twitter">Twitter</a>
+        <a href="#instagram">Instagram</a>
+        <p>&copy; 2024 Universal Safari Trip. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:universalsafaritrip@gmail.com">universalsafaritrip@gmail.com</a> | Phone: +25 639 400 1093</p>
+    </footer>
+    
+    <!-- Include the JavaScript file here -->
+    <script src="scripttravel.js"></script>
+</body>
+</html>
