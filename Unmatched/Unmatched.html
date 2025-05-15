@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unmatched Auto Detailing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> <!-- Google Fonts link for Montserrat -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif; /* Updated font */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            min-height: 100vh; /* Full height of the viewport */
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* black background */
+            color: white;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0eeaae; /* updated color */
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            transform: skew(-10deg); /* Slant the heading */
+            display: inline-block; /* Keep heading inline */
+        }
+        .header h2 {
+            color: white; /* Change color of "AUTO DETAILING" to white */
+            margin-top: 0; /* Remove margin to position it directly under */
+        }
+        .nav {
+            background-color: #0eeaae; /* updated color */
+            overflow: hidden;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Center items vertically */
+            padding: 10px 20px; /* Padding for navigation */
+        }
+        .nav a {
+            color: white;
+            text-align: center;
+            padding: 10px 8px; /* Adjusted padding to bring links closer together */
+            text-decoration: none;
+            font-weight: bold; /* Bold text */
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black
+        }
+        .social-media {
+            display: flex; /* Use flexbox for icons */
+        }
+        .social-icon {
+            color: white; /* Icon color */
+            text-decoration: none;
+            margin-left: 10px; /* Spacing between icons */
+            font-size: 1.5em; /* Icon size */
+        }
+        .social-icon:hover {
+            color: black; /* Change color on hover */
+        }
+        .main-banner {
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Enable positioning for children */
+        }
+        .main-banner img {
+            max-width: 100%;
+            height: auto;
+        }
+        .main-banner h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        .main-banner p {
+            font-size: 1.2em;
+        }
+        .main-banner .cta-button {
+            background-color: #0eeaae; /* updated color */
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold; /* Bold text */
+        }
+        .about-us {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .about-us h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .about-us p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .about-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .about-us ul li {
+            font-size: 1em;
+            padding: 10px 0;
+        }
+        .services {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1; /* Allow this section to grow and take available space */
+        }
+        .services h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+        .services .service {
+            display: inline-block;
+            width: 23%;
+            margin: 1%;
+            background-color: #000; /* Change background color to black */
+            color: #fff; /* Change text color to white for better contrast */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for depth */
+            height: 300px; /* Set a fixed height for uniformity */
+            box-sizing: border-box; /* Include padding in height calculation */
+        }
+        .services .service img {
+            max-width: 100%;
+            height: auto;
+        }
+        .services .service h3 {
+            font-size: 1.2em;
+        }
+        .services .service p {
+            font-size: 1em;
+        }
+        .services .service .cta-button {
+            background-color: #0eeaae; /* updated color */
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold; /* Bold text */
+        }
+        .footer {
+            background-color: #0eeaae; /* updated color to match nav */
+            color: #000;
+            text-align: center;
+            padding: 10px;
+        }
+        .footer .contact-info {
+            margin: 10px 0;
+        }
+        .footer .social-media {
+            justify-content: center; /* Center social media icons */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>UNMATCHED</h1>
+        <h2>AUTO DETAILING</h2>
+    </div>
+    <div class="nav">
+        <a href="home.html">Home</a>
+        <a href="ourwork.html">Our Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Gallery</a>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="main-banner" id="home">
+        <img src="https://cdna.artstation.com/p/assets/images/images/052/008/550/large/wuffiqo-alkistduem-rangerxx5.jpg" alt="Banner Image">
+    </div>
+    <div class="about-us" id="about">
+	   <h2>About Us</h2> 
+	   <img src="https://png.pngtree.com/thumb_back/fw800/background/20240424/pngtree-vehicle-in-white-soapy-foam-during-regular-car-wash-outdoors-auto-image_15666188.jpg" alt="Banner Image"> 
+        <p>Can you ceramic coat your wrapped vehicles? Absolutely!</p>
+        <p>We offer a ceramic coating service called WRAP-Guard that is applied in 2 layers to protect your wrapped vehicle.</p>
+        <ul>
+            <li>WRAP-Guard is a flexible nano-coating product that increases the performance of paint protection films and vinyl wraps.</li>
+            <li>It protects the applied surface against various factors and extends the life of the surface.</li>
+            <li>This service provides hydrophobic and UV resistance, is easy to clean, and won't spoil the physical properties of glossy, matte, or satin surfaces.</li>
+            <li>It also prevents color fading caused by sun rays and does not cause any changes in the structure of the film.</li>
+            <li>100% Customer Satisfaction Guaranteed</li>
+            <li>Licensed and Insured</li>
+            <li>Use of eco-friendly products</li>
+        </ul>
+        <p>What we offer:</p>
+        <ul>
+            <li>2 Year WRAP guard package</li>
+            <li>4 Year WRAP guard package</li>
+        </ul>
+        <p>Bookings/Enquiries:</p>
+        <p>Janco - 060 309 1238 / Johan - 082 781 8968</p>
+    </div>
+    </div>
+    <div class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <img src="https://images.squarespace-cdn.com/content/v1/5da923c3d570be7703c8b4c7/cd28ef73-6bc2-4c43-b42d-a6b774155698/A7C00245.jpg" alt="Service 1">
+            <h3>Engine Bay Detail</h3>
+            <p>Keep your engine bay clean and maintained.</p>
+        </div>
+        <div class="service">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb-i9COGeSm68HIqx4GI_eIynJXNGrUMbmRQ&s" alt="Service 2">
+            <h3>Exterior Detail</h3>
+            <p>Make your car shine like new.</p>
+        </div>
+        <div class="service">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh66_-DNovb2R8Ol5cnVwOPK12mbQF09cv8g&s" alt="Service 3">
+            <h3>Full Hand Polish</h3>
+            <p>Get a professional hand polish for your car.</p>
+        </div>
+        <div class="service">
+            <h3>2 Year WRAP guard package</h3>
+        </div>
+        <div class="service">
+            <h3>4 Year WRAP guard package</h3>
+        </div>
+    </div>
+    <div class="footer" id="contact">
+        <div class="contact-info">
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@unmatchedautodetailing.com</p>
+        </div>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        &copy; 2024 Unmatched Auto Detailing. All rights reserved.
+    </div>
+</body>
+</html>

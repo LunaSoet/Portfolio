@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Unmatched Auto Detailing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            color: #0eeaae;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #0eeaae;
+            border-radius: 5px;
+            background-color: #1c1c1c;
+            color: white;
+        }
+        button {
+            background-color: #0eeaae;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2em;
+        }
+        button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .notification {
+            margin-top: 20px;
+            text-align: center;
+            color: #0eeaae;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Checkout Page -->
+<div id="checkout-page" class="container">
+    <h1>Checkout</h1>
+    <form id="checkout-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Shipping Address</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">Zip Code</label>
+        <input type="text" id="zip" name="zip" required>
+
+        <button type="button" onclick="proceedToPayment()">Proceed to Payment</button>
+    </form>
+    <div class="notification" id="notification"></div>
+</div>
+
+<!-- Payment Page -->
+<div id="payment-page" class="container" style="display: none;">
+    <h1>Payment</h1>
+    <form id="payment-form">
+        <label for="card-name">Cardholder Name</label>
+        <input type="text" id="card-name" name="card-name" required>
+
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" name="card-number" required>
+
+        <label for="expiry-date">Expiry Date (MM/YY)</label>
+        <input type="text" id="expiry-date" name="expiry-date" required>
+
+        <label for="cvv">CVV</label>
+        <input type="number" id="cvv" name="cvv" required>
+
+        <button type="submit">Complete Payment</button>
+    </form>
+</div>
+
+<!-- Confirmation Page -->
+<div id="confirmation-page" class="container" style="display: none;">
+    <h1>Order Confirmation</h1>
+    <p>Thank you for your purchase!</p>
+    <p>Your order has been successfully processed.</p>
+    <p >Your confirmation email will be sent shortly.</p>
+</div>
+
+<script>
+    function proceedToPayment() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zip = document.getElementById('zip').value;
+
+        // Show notification
+        const notification = document.getElementById('notification');
+        notification.innerHTML = `Thank you, ${name}! Your shipping information has been received. A confirmation email will be sent to ${email}.`;
+
+        // Hide checkout page and show payment page
+        document.getElementById('checkout-page').style.display = 'none';
+        document.getElementById('payment-page').style.display = 'block';
+    }
+
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Here you would typically handle the payment processing
+        alert('Payment processed successfully! A confirmation email will be sent to you.');
+
+        // Hide payment page and show confirmation page
+        document.getElementById('payment-page').style.display = 'none';
+        document.getElementById('confirmation-page').style.display = 'block';
+    });
+</script>
+</body>
+</html>
