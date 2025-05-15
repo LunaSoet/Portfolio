@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif; /* Set font */
+    background-color: #b78ab9; /* Background color */
+    display: flex;
+    justify-content: center; /* Align center horizontally */
+    align-items: center; /* Align center vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+
+/* Styling for the to-do list container */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    width: 350px;
+    text-align: center;
+}
+
+/* Layout for the input container */
+.input-container {
+    display: flex;
+    gap: 10px; /* Space between input and button */
+    margin-bottom: 10px;
+}
+
+input {
+    flex: 1; /* Take up remaining space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+ /* Button styling */
+button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #b98a94; /* Quicksand */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8ab9b6;/* Gulf Stream */
+}
+
+ /* Styling for filter buttons */
+.filter-container {
+    margin-bottom: 10px;
+}
+
+/* Styling for the to-do list items */
+ul {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between; /* Space between text and delete button */
+    align-items: center;
+    background: #f9f9f9;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+/* Style for completed to-dos */
+li.completed {
+    text-decoration: line-through; /* Strike-through text */
+    color: Gulf Stream;
+}
+
+/* Trash button styling */
+.trash-btn {
+    background: none;
+    border: none;
+    color: #f90539;
+    cursor: pointer;
+}

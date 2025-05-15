@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic To-Do List</title>
+    <link rel="stylesheet" href="ToDoList.css"> <!-- External CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2>Dynamic To-Do List</h2> <!-- Heading for the to-do list -->
+        <div class="input-container">
+            <input type="text" id="newTodo" placeholder="Add a new to-do..."> <!-- Input field for new to-dos -->
+            <button onclick="addTodo()">+Add</button> <!-- Button to add new to-do -->
+        </div>
+        <div class="filter-container">
+            <button onclick="setFilter('all')">All</button> <!-- Button to filter all to-dos -->
+            <button onclick="setFilter('completed')">Completed</button> <!-- Button to filter completed to-dos -->
+            <button onclick="setFilter('notCompleted')">Not Completed</button> <!-- Button to filter incomplete to-dos -->
+        </div>
+        <ul id="todoList"></ul> <!-- Unordered list to display to-dos -->
+    </div>
+    <script src="ToDoList.js"></script> <!-- External JavaScript file -->
+</body>
+</html>
