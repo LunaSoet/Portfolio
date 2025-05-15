@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Memoirs of a Book Lover</title>
+	<style>
+		/* Typography */
+		body {
+			font-family: 'Playfair Display', 'Montserrat', sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+		}
+		
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Playfair Display', serif;
+			font-weight: bold;
+		}
+		
+		h1 {
+			color: #8b9467; /* sage green */
+			font-family: 'Allura', cursive; /* Palace Script MT font for h1 */
+			text-transform: capitalize;
+		}
+		
+		h2, h3, h4, h5, h6 {
+			color: #786C3B; /* much darker beige */
+		}
+		
+		/* Color scheme */
+		:root {
+			--sage-green: #8b9467;
+			--background-color: #f7f7f7;
+			--text-color: #333;
+			--rose-gold: #FFC5C5; /* bright rose gold */
+		}
+		
+		/* Header */
+		header {
+			background-image: url('https://prettylittlememoirs.com/wp-content/uploads/2020/05/PLM-Blog-Header-Image.jpg');
+			background-size: cover;
+			background-position: center;
+			padding: 20px;
+			text-align: center;
+			color: #fff;
+			background-color: var(--sage-green); /* updated to sage green */
+		}
+		
+		header h1 {
+			font-size: 36px;
+			margin-bottom: 10px;
+			color: #fff; /* updated to white */
+			position: relative; /* Add relative positioning */
+		}
+		
+		header h1::before {
+			content: "";
+			position: absolute;
+			bottom: -5px; /* Adjust as needed */
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0;
+			height: 5px; /* Adjust as needed */
+			background-color: var(--rose-gold); /* Bright rose gold color */
+			transition: width 0.5s ease-in-out;
+		}
+		
+		header h1:hover::before {
+			width: 100%; /* Expand the bubble on hover */
+		}
+		
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		nav li {
+			margin-right: 20px;
+			position: relative;
+		}
+		
+		nav a {
+			color: #fff; /* updated to white */
+			text-decoration: none;
+		}
+		
+		nav a:hover {
+			color: var(--rose-gold); /* updated to bright rose gold */
+		}
+		
+		.dropdown {
+			position: absolute;
+			background-color: #fff;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			display: none;
+		}
+		
+		.dropdown li {
+			margin-bottom: 10px;
+		}
+		
+		.dropdown a {
+			color: #333;
+		}
+		
+		.dropdown a:hover {
+			color: var(--rose-gold);
+		}
+		
+		nav li:hover .dropdown {
+			display: block;
+		}
+		
+		/* Layout */
+		main {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			background-color: var(--background-color);
+		}
+		
+		.post {
+			background-color: #fff;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			margin-bottom: 20px;
+		}
+		
+		.post h2 {
+			font-size: 24px;
+			margin-top: 0;
+			color: #786C3B; /* much darker beige */
+		}
+		
+		.post p {
+			margin-bottom: 20px;
+		}
+		
+		/* Button style with bright rose gold */
+		.rose-gold-button {
+			background-color: var(--rose-gold);
+			color: #FFFFFF;
+			border: none;
+			padding: 10px 20px;
+			font-size: 16px;
+			border-radius: 5px;
+		}
+		
+		/* Footer */
+		footer {
+			background-color: var(--sage-green); /* updated to sage green */
+			padding: 20px;
+			text-align: center;
+			color: #fff;
+		}
+		
+		footer p {
+			margin-bottom: 10px;
+		}
+		
+		footer a {
+			color: var(--rose-gold); /* updated to bright rose gold */
+			text-decoration: none;
+		}
+		
+		footer a:hover {
+			color: #fff; /* updated to white */
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1><span style="font-family: 'Allura', cursive; font-size: 36px; color: #fff;">Memoirs of a Book Lover</span></h1>
+		<nav>
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li class="dropdown-link">
+					<a href="about.html">About</a>
+					<ul class="dropdown">
+						<li><a href="meetme.html">Meet Luna</a></li>
+						<li><a href="Resource Library.html">Resource Library</a></li>
+					</ul>
+				</li>
+				<li><a href="blog.html">Blog</a></li>
+				<li class="dropdown-link">
+					<a href="contact.html">Contact</a>
+					<ul class="dropdown">
+						<li><a href="send me a message.html">Send me a message</a></li>
+					</ul>
+				</li>
+				<li class="dropdown-link">
+					<a href="ya.html">YA</a>
+					<ul class="dropdown">
+						<li><a href="Fantasy.html">Fantasy</a></li>
+						<li><a href="Romance.html">Romance</a></li>
+						<li><a href="Mystery.html">Mystery</a></li>
+						<li><a href="Dystopia.html">Dystopia</a></li>
+						<li><a href="Thriller.html">Thriller</a></li>
+						<li><a href="Rom-Com.html">Rom-Com</a></li>
+						<li><a href="Folklore.html">Folklore</a></li>
+						<li><a href="Sci-Fi.html">Sci-Fi</a></li>
+						<li><a href="Contemporary.html">Contemporary</a></li>
+						<li><a href="Holiday.html">Holiday</a></li>
+						<li><a href="Festive.html">Festive</a></li>
+						<li><a href="LGBTQ.html">LGBTQ</a></li>
+						<li><a href="Horror.html">Horror</a></li>
+						<li><a href="Coming of Age.html">Coming of Age</a></li>
+						<li><a href="Paranomal.html">Paranormal</a></li>	
+					</ul>
+				</li>
+				<li class="dropdown-link">
+					<a href="adult.html">Adult</a>
+					<ul class="dropdown">
+						<li><a href="Contemporary1.html">Contemporary</a></li>
+						<li><a href="Paranomal1.html">Paranormal</a></li>
+						<li><a href="Romance1.html">Romance</a></li>
+						<li><a href="LGBTQ1.html">LGBTQ</a></li>
+						<li><a href="Thriller1.html">Thriller</a></li>
+						<li><a href="Mystery1.html">Mystery</a></li>
+						<li><a href="Fantasy1.html">Fantasy</a></li>
+						<li><a href="Festive1.html">Festive</a></li>
+						<li><a href="Historical1.html">Historical</a></li>
+					</ul>
+				</li>
+				<li class="dropdown-link">
+					<a href="new-adult.html">New Adult</a>
+					<ul class="dropdown">
+						<li><a href="Coming of Age1.html">Coming of Age</a></li>
+						<li><a href="Romance2.html">Romance</a></li>
+						<li><a href="Drama1.html">Drama</a></li>
+					</ul>
+				<li class="dropdown-link">
+					<a href="misc.html">MISC</a>
+					<ul class="dropdown">
+						<li><a href="Non-Fiction.html">Non-Fiction</a></li>
+						<li><a href="Poetry.html">Poetry</a></li>
+						<li><a href="Audiobooks.html">Audiobooks</a></li>
+						<li><a href="Graphic Novels.html">Graphic Novels</a></li>
+						<li><a href="Cookbooks.html">Cookbooks</a></li>
+						<li><a href="Memoirs.html">Memoirs</a></li>
+						<li><a href="Art and Photography.html">Art & Photography</a></li>
+						<li><a href="Travel.html">Travel</a></li>
+						<li><a href="Business.html">Business</a></li>
+						<li><a href="History.html">History</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+    
+    <main>
+        <h2 style="text-align: center; color: #786C3B; margin-top: 0; margin-bottom: 20px;">Blog</h2>
+    </main>
+    
+	<footer>
+		<p>&copy; 2024 Memoirs of a Book Lover</p>
+		<p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+	</footer>
+</body>
+</html>

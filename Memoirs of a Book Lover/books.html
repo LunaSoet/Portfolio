@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Memoirs of a Book Lover</title>
+	<style>
+		/* Typography */
+		body {
+			font-family: 'Playfair Display', 'Montserrat', sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+		}
+		
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Playfair Display', serif;
+			font-weight: bold;
+			color: #8B9467; /* sage green */
+		}
+		
+		/* Color scheme */
+		:root {
+			--rose-gold: #FFD7BE;
+			--sage-green: #8B9467;
+			--background-color: #f7f7f7;
+			--text-color: #333;
+		}
+		
+		/* Header */
+		header {
+			background-image: url('https://prettylittlememoirs.com/wp-content/uploads/2020/05/PLM-Blog-Header-Image.jpg');
+			background-size: cover;
+			background-position: center;
+			padding: 20px;
+			text-align: center;
+			color: #fff;
+		}
+		
+		header h1 {
+			font-size: 36px;
+			margin-bottom: 10px;
+		}
+		
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		nav li {
+			margin-right: 20px;
+		}
+		
+		nav a {
+			color: var(--text-color);
+			text-decoration: none;
+		}
+		
+		nav a:hover {
+			color: var(--rose-gold);
+		}
+		
+		/* Layout */
+		main {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			background-color: var(--background-color);
+		}
+		
+		.post {
+			background-color: #fff;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			margin-bottom: 20px;
+		}
+		
+		.post h2 {
+			font-size: 24px;
+			margin-top: 0;
+		}
+		
+		.post p {
+			margin-bottom: 20px;
+		}
+		
+		/* Footer */
+		footer {
+			background-color: var(--rose-gold);
+			padding: 20px;
+			text-align: center;
+			color: #fff;
+		}
+		
+		footer p {
+			margin-bottom: 10px;
+		}
+		
+		footer a {
+			color: var(--sage-green);
+			text-decoration: none;
+		}
+		
+		footer a:hover {
+			color: var(--rose-gold);
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Book Reviews</h1>
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="#write-review">Write a Review</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section id="home">
+			<h2>Welcome to Book Reviews!</h2>
+			<p>This is a website where you can read and write book reviews.</p>
+			<p>Explore our latest reviews, or write your own review today!</p>
+		</section>
+		
+		<section id="reviews">
+			<h2>Latest Reviews</h2>
+			<div id="review-list">
+				<!-- review list will be generated here -->
+			</div>
+		</section>
+		
+		<section id="write-review">
+			<h2>Write a Review</h2>
+			<form id="review-form">
+				<label for="title">Book Title:</label>
+				<input type="text" id="title" name="title"><br><br>
+				<label for="author">Author:</label>
+				<input type="text" id="author" name="author"><br><br>
+				<label for="review">Review:</label>
+				<textarea id="review" name="review"></textarea><br><br>
+				<input type="submit" value="Submit Review">
+			</form>
+		</section>
+	</main>
+	
+	<script>
+		// get the review list element
+		const reviewList = document.getElementById('review-list');
+		
+		// add some sample reviews
+		const reviews = [
+			{ title: 'Book 1', author: 'Author 1', review: 'This is a great book!' },
+			{ title: 'Book 2', author: 'Author 2', review: 'I loved this book!' },
+			{ title: 'Book 3', author: 'Author 3', review: 'This book is amazing!' }
+		];
+		
+		reviews.forEach((review) => {
+			const reviewElement = document.createElement('div');
+			reviewElement.className = 'post';
+			reviewElement.innerHTML = `
+				<h2>${review.title} by ${review.author}</h2>
+				<p>${review.review}</p>
+			`;
+			reviewList.appendChild(reviewElement);
+		});
+	</script>
+	
+	<footer>
+		<p>&copy; 2023 Book Reviews</p>
+		<p><a href="#">Contact Us</a></p>
+	</footer>
+</body>
+</html>

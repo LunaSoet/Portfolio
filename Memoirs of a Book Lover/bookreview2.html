@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Reviews</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background-color: #f7f7f7;
+		}
+		
+		header {
+			background-color: #c9c9c9;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		header h1 {
+			color: #6c5ce7; /* pastel purple */
+		}
+		
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		nav li {
+			margin-right: 20px;
+		}
+		
+		nav a {
+			color: #f7dc6f; /* pastel yellow */
+			text-decoration: none;
+		}
+		
+		nav a:hover {
+			color: #6c5ce7; /* pastel purple */
+		}
+		
+		main {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+		}
+		
+		#reviews {
+			background-color: #fff;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		#review-list {
+			margin-top: 20px;
+		}
+		
+		.review {
+			background-color: #f7f7f7;
+			padding: 20px;
+			border: 1px solid #ddd;
+			margin-bottom: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		#write-review {
+			background-color: #fff;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		#review-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		#review-form label {
+			margin-bottom: 10px;
+		}
+		
+		#review-form input, #review-form textarea {
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+		}
+		
+		#review-form input[type="submit"] {
+			background-color: #6c5ce7; /* pastel purple */
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+		
+		#review-form input[type="submit"]:hover {
+			background-color: #f7dc6f; /* pastel yellow */
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Book Reviews</h1>
+		<nav>
+			<ul>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="#write-review">Write a Review</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="reviews">
+			<h2>Latest Reviews</h2>
+			<div id="review-list">
+				<!-- review list will be generated here -->
+			</div>
+		</section>
+		<section id="write-review">
+			<h2>Write a Review</h2>
+			<form id="review-form">
+				<label for="title">Book Title:</label>
+				<input type="text" id="title" name="title"><br><br>
+				<label for="author">Author:</label>
+				<input type="text" id="author" name="author"><br><br>
+				<label for="review">Review:</label>
+				<textarea id="review" name="review"></textarea><br><br>
+				<input type="submit" value="Submit Review">
+			</form>
+		</section>
+	</main>
+
+	<script>
+		// get the review form and review list elements
+		const reviewForm = document.getElementById('review-form');
+		const reviewList = document.getElementById('review-list');
+
+		// add an event listener to the form submission
+		reviewForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const title = document.getElementById('title').value;
+			const author = document.getElementById('author').value;
+			const review = document.getElementById('review').value;
+
+			// create a new review element
+			const reviewElement = document.createElement('div');
+			reviewElement.className = 'review';
+			reviewElement.innerHTML = `
+				<h3>${title} by ${author}</h3>
+				<p>${review}</p>
+			`;
+
+			// add the review element to the review list
+			reviewList.appendChild(reviewElement);
+
+			// reset the form fields
+			document.getElementById('title').value = '';
+			document.getElementById('author').value = '';
+			document.getElementById('review').value = '';
+		});
+	</script>
+</body>
+</html>
