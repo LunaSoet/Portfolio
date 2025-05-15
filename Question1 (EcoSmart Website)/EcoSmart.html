@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSmart Water Bottle</title>
+    <link rel="stylesheet" href="EcoSmart.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="navbar">
+        <nav>
+            <ul>
+			    <!-- Navigation links that take you to the different sections -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+     <!-- Main Section: Displays the product image and a "Buy Now" button -->
+    <section id="home" class="main">
+        <div class="product">
+		    <h2>EcoSmart Watter Bottle</h2>
+		    <!-- Placeholder image for the product -->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeGq2Q2_h_jkshBOPu4bbC9M1S7TrAa2OAnQ&s" alt="EcoSmart Water Bottle" class="product-image">
+			<!-- Button to open the modal for product selection -->
+            <button class="buy-btn" onclick="openModal()">Buy Now</button>
+        </div>
+		<!-- Displays the price of the product -->
+        <div class="pricing">
+            <h2>Total Price: R<span id="price">550</span></h2>
+        </div>
+    </section>
+
+     <!-- Features Section: Describes the features of the product -->
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <p>EcoSmart Water Bottle is made with sustainable materials like stainless steel, glass and BPA plastics!</p>
+		<p>Its durable, lightweight and dishwasher-safe.</p>
+		<p>It keeps your water cool for 12 hours!</p>
+    </section>
+
+     <!-- Pricing Section: Describes the pricing details of the product -->
+    <section id="pricing" class="pricing-section">
+        <h2>Pricing</h2>
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM_WpgnHwAMbX4-Pcy85bozue7weBPBbg-pg&s" alt="EcoSmart Water Bottle" class="product-image">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToNbt9m2YKltO58EpMxC_FrBS50dg6XW4RcoUL3Wtom400cs6PQ0InUiSQFO9yNLOTgXQ&usqp=CAU" alt="EcoSmart Water Bottle" class="product-image">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLBo5XzqZXNqQ2ZFJ4RmP9y4fmUwwbWesro06xIrrfB94wr8LVB5Q92zAKdQX4DmuJQJI&usqp=CAU"alt="EcoSmart Water Bottle" class="product-image">
+			<!-- Button to open the modal for product selection -->
+        <p>Starting from R550. Add customization options to make it yours!</p>
+    </section>
+
+    <!-- Modal for Color Selection -->
+    <div id="colorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Select Color</h3>
+			<!-- Form for color and customization options -->
+            <form id="colorForm">
+			    <!-- Radio buttons for selecting product color -->
+                <label>
+                    <input type="radio" name="color" value="Red" onclick="updatePrice(750)"> Orange
+                </label><br>
+                <label>
+                    <input type="radio" name="color" value="Blue" onclick="updatePrice(750)"> Blue
+                </label><br>
+                <label>
+                    <input type="radio" name="color" value="Green" onclick="updatePrice(750)"> Green
+				</label><br>
+				<label>
+				    <input type="radio" name="color" value="Grey" onclick="updatePrice(750)"> Grey
+				</label><br>
+				<label>
+				    <input type="radio" name"color" value="PaleBlue" onclick="updatePrice(750)"> Pale Blue
+                </label><br><br>
+				<!-- Checkbox for adding custom engraving -->
+                <label>
+                    Custom Engraving (R250): 
+                    <input type="checkbox" id="engraving" onclick="updatePrice()">
+                </label><br><br>
+				<!-- Checkbox for adding premium packaging -->
+                <label>
+                    Premium Packaging (R150): 
+                    <input type="checkbox" id="packaging" onclick="updatePrice()">
+                </label><br><br>
+				<!-- Button to confirm selection and close the modal -->
+                <button type="button" onclick="closeModal()">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section with Contact Form -->
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <form id="contactForm">
+		    <!-- Input fields for the user's name, email, and message -->
+            <input type="text" id="name" placeholder="Your Name" required><br><br>
+            <input type="email" id="email" placeholder="Your Email" required><br><br>
+            <textarea id="message" placeholder="Your Message" required></textarea><br><br>
+			<!-- Checkbox to agree to terms and conditions before form submission -->
+            <label>
+                <input type="checkbox" id="terms" required>I agree to the Terms and Conditions
+            </label>
+			
+			<!-- Submit button for the contact form -->
+            <button type="submit" id="submitBtn" disabled>Submit</button>
+        </form>
+    </footer>
+	
+     <!-- Link to the JavaScript file -->
+    <script src="EcoSmart.js"></script>
+</body>
+</html>
